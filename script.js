@@ -17,19 +17,21 @@ form.addEventListener('submit', function(event) {
     } else {
         alert('Vui lòng nhập thông tin')
     }
+
     input.value = ''
+
 });
 
 function addTodoElement(todo) {
     let li = document.createElement('li')
     li.innerHTML = `
         <span>${todo.text}</span>
-        <i class="fa-solid fa-trash"></i>
+        <i class="fa-regular fa-eye-slash"></i>
     `
     if(todo.status === 'completed') {
         li.setAttribute('class', 'completed');
     }
-// ẩn và hiện task
+// ẩn hiện task
 
     li.addEventListener('click', function(){
         // console.log(this);
@@ -42,6 +44,6 @@ function addTodoElement(todo) {
         this.parentElement.remove();
     })
         
-
     todos.appendChild(li)
 }
+
